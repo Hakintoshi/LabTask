@@ -315,7 +315,7 @@ const setUsers = async (filterUsers, start = 0, end = 5, currPage = 0) => {
   if (users.length === 0) {
     const tr = document.createElement("tr");
     const td = document.createElement("td");
-    td.classList.add("tr-info");
+    td.classList.add("td-info");
     td.textContent = "Пользователи не найдены";
     td.setAttribute("colspan", 5);
     tr.append(td);

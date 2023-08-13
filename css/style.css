@@ -4,7 +4,6 @@
 .wrapper {
     width: 961px;
     font-family: 'Inter';
-    
     min-height: 100vh;
     margin: 0 auto;
 }
@@ -21,7 +20,6 @@
     border-radius: 7px;
     padding: 12px 16px 16px 16px;
     border-radius: 7px;
-    
     box-shadow: 0px 18px 15px 0px rgba(148, 148, 148, 0.15);
 }
 
@@ -30,7 +28,6 @@
 }
 
 .search-form__field {
-    
     background-color: #ECEFF0;
     width: 870px;
     font-size: 12px;
@@ -116,8 +113,6 @@
 
 tr {
  border-bottom: 1px solid #F7F7F7;
- 
- 
 }
 
 tr:last-child {
@@ -125,14 +120,12 @@ tr:last-child {
 }
 
 th {
-   
     min-width: 250px;
     padding-bottom: 22px;
     font-size: 10px;
     color: #9EAAB4;
     font-weight: 500;
     text-align: left;
-
 }
 th:nth-last-child(-n+2) {
     min-width: 150px;
@@ -144,43 +137,33 @@ th:nth-last-child(-n+1) {
 }
 
 td {
-    
     min-width: 250px;
     padding-top: 14px;
     padding-bottom: 20px;
     font-size: 12px;
 }
-
-td:nth-last-child(-n+2) {
-    min-width: 150px;
-    
-    
-}
-
-td:nth-last-child(-n+1) {
-    min-width: fit-content;
-    
-}
-
 td:first-child {
     color: #0CB4F1;
     font-weight: 700;
     padding-left: 0;
 }
+td:nth-last-child(-n+2) {
+    min-width: 150px;
+}
+td:nth-last-child(-n+1) {
+    min-width: fit-content;
+    
+}
 
-.tr-info {
+/* Класс для отображения пустого списка пользователей */
+.td-info {
     color: #9EAAB4 !important;
     text-align: center;
 }
 
-
-th:first-child {
-    padding-left: 0;
-}
-
+/* Класс для изменения фона во время открытия попапа */
 .blur {
     background-color: rgb(255, 255, 255, 0.4);
-    
 }
 
 .list-pagination {
@@ -231,7 +214,6 @@ th:first-child {
 
 .modal__btns {
     width: 219px;
-    
     display: flex;
     justify-content: space-between;
 }
