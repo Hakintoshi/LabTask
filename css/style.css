@@ -1,0 +1,253 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@400;500&family=Poppins:wght@400;700&display=swap');
+
+.wrapper {
+    width: 961px;
+    font-family: 'Inter';
+    
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.header__title {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.search {
+    margin-top: 20px;
+    max-height: 102px;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 12px 16px 16px 16px;
+    border-radius: 7px;
+    
+    box-shadow: 0px 18px 15px 0px rgba(148, 148, 148, 0.15);
+}
+
+.search-form {
+    position: relative;
+}
+
+.search-form__field {
+    
+    background-color: #ECEFF0;
+    width: 870px;
+    font-size: 12px;
+    height: 20px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    padding-left: 31px;
+    padding: 7px 0 7px 31px;
+}
+
+.search-form__field::placeholder {
+    color: #9EAAB4;
+    font-weight: 500;
+}
+
+.search-form__icon {
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+}
+
+.hideFocus {
+    pointer-events: none;
+}
+
+.clean-filter {
+    margin-top: 24px;
+    display: none;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    height: 16px;
+    cursor: pointer;
+    animation: showFilter 0.5s linear forwards;
+}
+
+@keyframes showFilter {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.sorting {
+    margin-top: 72px;
+    display: flex;
+    font-size: 10px;
+    font-weight: 500;
+    color: #9EAAB4;
+}
+
+.sorting__param {
+    border-bottom: 1px dashed #9EAAB4;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.active-param {
+    color: #333;
+    border-bottom: 1px dashed #333;
+}
+
+.main {
+    width: 100%;
+    position: relative;
+    min-height: 410px;
+}
+
+.table {
+    display: block;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 7px;
+    padding: 16px;
+    min-height: 335px;
+}
+
+
+tr {
+ border-bottom: 1px solid #F7F7F7;
+ 
+ 
+}
+
+tr:last-child {
+    border-bottom: none;
+}
+
+th {
+   
+    min-width: 250px;
+    padding-bottom: 22px;
+    font-size: 10px;
+    color: #9EAAB4;
+    font-weight: 500;
+    text-align: left;
+
+}
+th:nth-last-child(-n+2) {
+    min-width: 150px;
+    
+}
+th:nth-last-child(-n+1) {
+    min-width: fit-content;
+    
+}
+
+td {
+    
+    min-width: 250px;
+    padding-top: 14px;
+    padding-bottom: 20px;
+    font-size: 12px;
+}
+
+td:nth-last-child(-n+2) {
+    min-width: 150px;
+    
+    
+}
+
+td:nth-last-child(-n+1) {
+    min-width: fit-content;
+    
+}
+
+td:first-child {
+    color: #0CB4F1;
+    font-weight: 700;
+    padding-left: 0;
+}
+
+.tr-info {
+    color: #9EAAB4 !important;
+    text-align: center;
+}
+
+
+th:first-child {
+    padding-left: 0;
+}
+
+.blur {
+    background-color: rgb(255, 255, 255, 0.4);
+    
+}
+
+.list-pagination {
+    translate: -50% 0 ;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-pagination__btn {
+    border-radius: 50%;
+    border: 1px solid #9EAAB4;
+    background-color: #FFF;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.pagination-btn-active {
+    background-color: #0CB4F1;
+    color: #FFF;
+}
+
+.modal {
+    position: absolute;
+    visibility: hidden;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: #fff;
+    border-radius: 8px;
+    width: 281px;
+    height: 66px;
+    font-size: 12px;
+    padding: 36px 36px 32px 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal__text {
+    font-weight: 400;
+}
+
+.modal__btns {
+    width: 219px;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal__btns-modal-btn {
+    padding: 6px 36px;
+    border-radius: 3px;
+    border: none;
+    color: #828282;
+    background-color: #E0E0E0;
+}
+
+.cancel {
+    color: #FFF;
+    background-color: #0CB4F1;
+}
+
+
+

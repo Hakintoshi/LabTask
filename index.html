@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1 class="header__title">Список пользователей</h1>
+        </header>
+        <section class="search">
+            <form class="search-form">
+                <img src="./icons/source_icons_search 1.svg" class="search-form__icon" alt="Иконка лупы">
+                <input type="text" class="search-form__field" placeholder="Поиск по имени или e-mail">
+            </form>
+            <div class="clean-filter">
+                <img src="./icons/clean.svg" class="clean-filter__icon" alt="">
+                <p class="clean-filter__text">Очистить фильтр</p>
+            </div>
+        </section>
+        <main class="main">
+            <section class="sorting">
+                <p>Сортировка:</p>
+                <p class="sorting__param">Дата регистрации</p>
+                <p class="sorting__param">Рейтинг</p>
+            </section>
+            <table class="table">
+                <tbody class="a">
+                    <tr>
+                        <th>Имя пользователя</th>
+                        <th>E-mail</th>
+                        <th>Дата регистрации</th>
+                        <th>Рейтинг</th>
+                        <th></th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="list-pagination"></div>
+            <div class="modal">
+                <p class="modal__text">Вы уверены, что хотите удалить пользователя?</p>
+                <div class="modal__btns">
+                    <button class="modal__btns-modal-btn">Да</button>
+                    <button class="modal__btns-modal-btn cancel">Нет</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="index.js" ></script>
+</body>
+</html>
