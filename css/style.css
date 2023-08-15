@@ -163,7 +163,7 @@ td:nth-last-child(-n+1) {
 
 /* Класс для изменения фона во время открытия попапа */
 .blur {
-    background-color: rgb(255, 255, 255, 0.4);
+    background-color: rgb(250, 250, 255, 0.4);
 }
 
 .list-pagination {

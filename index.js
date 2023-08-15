@@ -142,6 +142,7 @@ const createTable = (users) => {
     let closeTd = document.createElement("td");
 
     closeTd.addEventListener("click", () => {
+      const table = document.querySelector('table')
       const modal = document.querySelector(".modal");
       const tds = document.querySelectorAll("td");
       searchField.classList.add("hideFocus");
@@ -151,6 +152,7 @@ const createTable = (users) => {
       modal.style.visibility = "visible";
 
       const hideModal = () => {
+        
         modalIsOpen = false;
         modal.style.visibility = "hidden";
         searchField.classList.remove("hideFocus");
