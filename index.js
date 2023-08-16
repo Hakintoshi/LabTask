@@ -58,6 +58,7 @@ cleanFilter.addEventListener("click", () => {
   searchField.value = "";
   cleanFilter.style.display = "none";
   copyUsers = null;
+  sortedUsers = null;
   // Перевод флагов для фильторв
   sortByDate = true;
   sortByRating = true;
