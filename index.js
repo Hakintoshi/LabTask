@@ -3,6 +3,7 @@ let users = [];
 let modalIsOpen = false;
 let copyUsers = null;
 let sortedUsers;
+let copySortedUsers;
 
 const table = document.querySelector("tbody");
 const searchField = document.querySelector(".search-form__field");
@@ -31,6 +32,11 @@ searchField.addEventListener("input", (e) => {
     if ( !filters[0].classList.contains("active-param") && !filters[1].classList.contains("active-param")) {
       cleanFilter.style.display = "none";
     }
+    if(sortedUsers) {
+      copyUsers = copySortedUsers
+      setUsers(copySortedUsers)
+      return;
+    }
   }
 
   const searchUsers = (users) => {
@@ -41,7 +47,8 @@ searchField.addEventListener("input", (e) => {
   }
 
   if(sortedUsers) {
-    copyUsers = searchUsers(sortedUsers)
+    
+    copyUsers = searchUsers(copySortedUsers)
   }else {
     copyUsers = searchUsers(users)
   }
@@ -100,6 +107,7 @@ filters[0].addEventListener("click", () => {
     sortedUsers = sortUsers(users, "registration_date", sortByDate);
     setUsers(sortedUsers);
   }
+  copySortedUsers = sortUsers(users, "registration_date", sortByDate);
 });
 
 filters[1].addEventListener("click", () => {
@@ -119,8 +127,7 @@ filters[1].addEventListener("click", () => {
     sortedUsers = sortUsers(users, "rating", sortByRating);
     setUsers(sortedUsers);
   }
-  console.log(copyUsers)
-  console.log(users)
+  copySortedUsers = sortUsers(users, "rating", sortByRating);
 });
 
 /**
@@ -305,6 +312,10 @@ const deleteUser = (id, onPrev) => {
     users = users.filter((user) => user.id !== id);
     setUsers(users, start, end, currPage);
   }
+  if(copySortedUsers) {
+    copySortedUsers = copySortedUsers.filter((user) => user.id !== id);
+  }
+  
 };
 
 const setUsers = async (filterUsers, start = 0, end = 5, currPage = 0) => {
