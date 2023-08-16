@@ -127,8 +127,7 @@ filters[1].addEventListener("click", () => {
     sortedUsers = sortUsers(users, "rating", sortByRating);
     setUsers(sortedUsers);
   }
-  console.log(copyUsers)
-  console.log(users)
+  copySortedUsers = sortUsers(users, "rating", sortByRating);
 });
 
 /**
