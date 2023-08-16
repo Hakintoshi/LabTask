@@ -2,6 +2,7 @@
 let users = [];
 let modalIsOpen = false;
 let copyUsers = null;
+let sortedUsers;
 
 const table = document.querySelector("tbody");
 const searchField = document.querySelector(".search-form__field");
@@ -31,10 +32,20 @@ searchField.addEventListener("input", (e) => {
       cleanFilter.style.display = "none";
     }
   }
-  copyUsers = users.filter( (user) =>   
+
+  const searchUsers = (users) => {
+    return users.filter( (user) =>   
     user.username.toLowerCase().includes(searchText.toLowerCase()) ||  
     user.email.toLowerCase().includes(searchText.toLowerCase())
   );
+  }
+
+  if(sortedUsers) {
+    copyUsers = searchUsers(sortedUsers)
+  }else {
+    copyUsers = searchUsers(users)
+  }
+  
   setUsers(copyUsers);
 });
 
@@ -43,6 +54,7 @@ searchField.addEventListener("input", (e) => {
 const cleanFilter = document.querySelector(".clean-filter");
 
 cleanFilter.addEventListener("click", () => {
+  if (modalIsOpen) return;
   searchField.value = "";
   cleanFilter.style.display = "none";
   copyUsers = null;
@@ -68,6 +80,8 @@ const switchActive = (numFilterFirst, numFilterSecond) => {
     cleanFilter.style.display = "flex";
 }
 
+
+
 filters[0].addEventListener("click", () => {
   if (modalIsOpen) return;
   const searchField = document.querySelector(".search-form__field");
@@ -77,7 +91,7 @@ filters[0].addEventListener("click", () => {
   switchActive(1,0)
   sortByDate = !sortByDate;
   sortByRating = true;
-  let sortedUsers;
+  
   if (copyUsers) {
     sortedUsers = sortUsers(copyUsers, "registration_date", sortByDate);
     setUsers(sortedUsers);
@@ -96,7 +110,7 @@ filters[1].addEventListener("click", () => {
   switchActive(0,1)
   sortByRating = !sortByRating;
   sortByDate = true;
-  let sortedUsers;
+  
   if (copyUsers) {
     sortedUsers = sortUsers(copyUsers, "rating", sortByRating);
     setUsers(sortedUsers);
@@ -104,6 +118,8 @@ filters[1].addEventListener("click", () => {
     sortedUsers = sortUsers(users, "rating", sortByRating);
     setUsers(sortedUsers);
   }
+  console.log(copyUsers)
+  console.log(users)
 });
 
 /**
